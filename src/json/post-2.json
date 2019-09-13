@@ -1,0 +1,17 @@
+{
+  "results": [{
+    "id": "post-2",
+    "title": "Entidades de Intermediación Financiera",
+    "content": "Gran parte de estos recursos se encuentran concentrados en Bancos Múltiples (76,2%), Banco Público (12,5%) y Cooperativas de Ahorro y Crédito - CAC (3,6%), que sumados alcanzan al 92%, el resto de los activos se encuentra distribuido en Instituciones Financieras de Desarrollo (IFD), Bancos PYMES (BPY), Banco de Desarrollo Público (BDP) y Entidades Financieras de Vivienda (EFV). <em>(Tabla N° 1)</em><br><br>La concentración de cartera del sistema de intermediación financiera replica la descripción precedente, es decir, Bancos Múltiples (BMU), Banco Público (BPU) y Cooperativas de Crédito y Ahorro (CAC).<br><br>Los depósitos del público alcanzaron a Bs. 173.063 millones a diciembre de 2018, concentrados en Bancos Múltiples (BMU), Banco Público (BPU) y Cooperativas de Ahorro y Crédito (CAC). Sin embargo, es importante destacar que las IFD (Instituciones Financieras de Desarrollo) por no captar depósitos del público fondea sus operaciones con préstamos de diferentes entidades financieras, del mismo modo algunos Bancos PYME, Entidades Financieras de Vivienda y el Banco de Desarrollo Productivo fondean parte de sus préstamos con aquellos que les otorgan las entidades de financiamiento, debido a que sus captaciones del público son inferiores a su cartera de préstamos.",
+    "table": {
+      "table1": "table1",
+      "table2": "table2",
+      "table3": "table3"
+    },
+    "meta": {
+      "description": "Los activos totales del sistema de intermediación financiera conformada por 58 entidades a diciembre de 2018, sumaron Bs. 241.322 millones.",
+      "published": "2019-04-29T15:17:00Z",
+      "author": "Ingenieria Economica"
+    }
+  }]
+}

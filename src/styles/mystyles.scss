@@ -1,0 +1,60 @@
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import "@/styles/titlebar.scss";
+@import "@/styles/feed.scss";
+@import "@/styles/post.scss";
+@import "@/styles/scrollbar.scss";
+@import "@/styles/transition.scss";
+@import "@/styles/tabname.scss";
+@import "@/styles/nosotros.scss";
+@import "@/styles/publication.scss";
+
+// * Esta es la definicion de colores de la pagina
+@import "@/styles/theme.scss";
+
+html {
+  height: 100vh;
+  // border: 3px solid blue;
+}
+body {
+  height: 100vh;
+  min-height: 35rem;
+  // border: 3px solid blue;
+  /* background-image: linear-gradient(to top right, #2db9cc , #3b8fd8, #4f5fda, #6031EF, #6F01F7); */
+
+  font-family: "Montserrat", sans-serif;
+}
+.cont {
+  // width: 100%;
+  // display: flex;
+  height: 90vh;
+  padding: 0;
+  margin-top: 0;
+  background: white;
+  // border: 3px solid blue;
+}
+.bhome {
+  // border: 3px solid red;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-image: $coreGradient;
+}
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.background .bimage {
+  width: 75%;
+  height: auto;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}

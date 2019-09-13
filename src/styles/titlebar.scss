@@ -1,0 +1,49 @@
+.mainbar {
+  // display: flex;
+  @include media-breakpoint-up(md) {
+    height: 10vh;
+  }
+  // padding: 0;
+  // border: 1px solid red;
+  // width: 100vw;
+}
+.titlebar {
+  background-color: #000000;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  // padding-top: 0;
+  // padding-bottom: 0;
+  // padding-left: 3rem;
+  // padding-right: 3rem;
+  // @include media-breakpoint-down(sm) {
+  //     padding-left: 1rem;
+  //     padding-right: 1rem;
+  // }
+}
+.titleicon {
+  max-width: 15vh;
+  min-width: 50px;
+  height: auto;
+}
+.titlebar .router-link-active {
+  text-decoration: underline white;
+  color: white !important;
+  // @include media-breakpoint-down(sm) {
+  //     background: linear-gradient(to right, #51CEE5, #00BBE4);
+  //     color:white!important;
+  //     text-decoration: none;
+  // }
+}
+.titlebar .nav-link {
+  //   color: white !important;
+  // color: black!important;
+  font-weight: 600;
+}
+.title_nav {
+  margin-left: auto;
+  // border: 1px solid red;
+  @include media-breakpoint-up(md) {
+    width: 70%;
+  }
+}

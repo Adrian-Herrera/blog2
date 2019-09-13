@@ -1,0 +1,28 @@
+{
+  "results": [{
+    "name": "Valentina Franco",
+    "image": "contact.png",
+    "description": "Estudiante de la Unifranz y colaboradora principal de las publicaciones",
+    "id": "name-1"
+  }, {
+    "name": "Valentina Fernandez",
+    "image": "contact.png",
+    "description": "Estudiante de la Unifranz y colaboradora principal de las publicaciones",
+    "id": "name-2"
+  }, {
+    "name": "Inti Tapia",
+    "image": "contact.png",
+    "description": "Estudiante de la Unifranz y colaboradora principal de las publicaciones",
+    "id": "name-3"
+  }, {
+    "name": "Katherine Calderon",
+    "image": "contact.png",
+    "description": "Estudiante de la Unifranz y colaboradora principal de las publicaciones",
+    "id": "name-4"
+  }, {
+    "name": "Jonathan Falcon",
+    "image": "contact.png",
+    "description": "Estudiante de la Unifranz y colaborador principal de las publicaciones",
+    "id": "name-5"
+  }]
+}

@@ -1,0 +1,27 @@
+{
+  "results": [{
+    "title": "contexto del sistema financiero",
+    "image": "post1.jpg",
+    "published": "2019-04-29T15:17:00Z",
+    "author": "Ingenieria Economica",
+    "id": "post-1"
+  }, {
+    "title": "entidades de intermediación financiera",
+    "image": "post2.jpg",
+    "published": "2019-04-29T15:17:00Z",
+    "author": "Ingenieria Economica",
+    "id": "post-2"
+  }, {
+    "title": "mercado de valores",
+    "image": "post1.jpg",
+    "published": "2019-04-29T15:17:00Z",
+    "author": "Ingenieria Economica",
+    "id": "post-3"
+  }, {
+    "title": "administradoras de fondos de inversion",
+    "image": "post2.jpg",
+    "published": "2019-04-29T15:17:00Z",
+    "author": "Ingenieria Economica",
+    "id": "post-4"
+  }]
+}

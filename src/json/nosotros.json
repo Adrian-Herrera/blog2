@@ -1,0 +1,34 @@
+{
+    "persons":[
+        {
+            "id": "P1",
+            "name": "Adrian Herrera",
+            "info": "Estudiante de la unifranz"
+        },
+        {
+            "id": "P2",
+            "name": "Juan Perez",
+            "info": "Estudiante de la unifranz"
+        },
+        {
+            "id": "P3",
+            "name": "Juan Perez",
+            "info": "Estudiante de la unifranz"
+        },
+        {
+            "id": "P4",
+            "name": "Juan Perez",
+            "info": "Estudiante de la unifranz"
+        },
+        {
+            "id": "P5",
+            "name": "Juan Perez",
+            "info": "Estudiante de la unifranz"
+        },
+        {
+            "id": "P6",
+            "name": "Juan Perez",
+            "info": "Estudiante de la unifranz"
+        }
+    ]
+}

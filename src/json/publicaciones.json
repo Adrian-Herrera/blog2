@@ -1,0 +1,50 @@
+{
+    "publicaciones": [
+        {
+            "postId": "1",
+            "titulo": "Contexto Del Sistema Financiero",
+            "descripcion": "Se entiende como sistema financiero al conjunto de entidades financieras y no financieras que participan en la actividad económica del país, estas realizan diferentes actividades económicas que a continuación se nombran:",
+            "imagen": "post1.jpg",
+            "tema": [
+                "Bancos",
+                "Finanzas"
+            ],
+            "fecha": "1/8/2019",
+            "texto": "<ul><li><strong>Entidades de Intermediación Financiera</strong> Que analizan los ahorros del púbico para colocar créditos (préstamos). En Bolivia, las entidades de intermediación financiera participantes son: Bancos de Desarrollo Publico (BDP), Bancos Múltiples(BMU), Bancos PYMES (BPY), Entidades Financieras de Vivienda (EFV), Instituciones Financieras de Desarrollo (IFD), Cooperativas de Ahorro y Crédito (CAC) y Bancos Públicos (BPU).</li><br><li><strong>Administradoras de fondos de pensiones (AFP)</strong> Encaminan y administran los aportes de los trabajadores (para el pago de las rentas vitalicias) y coadyuvan la búsqueda de rendimiento donde invierten sus recursos en valores de oferta pública, privada y depósitos a plazo fijo en las entidades financieras.</li><br><li><strong>Banco Central de Bolivia. - </strong> Genera los lineamientos de orden monetario para su aplicación en la economía y el sistema financiero.</li><br><li><strong>Autoridad de Supervisión del Sistema Financiero (ASFI). -</strong> Que establece los lineamientos de gestión financiera de las entidades de intermediación financiera, así como de entidades auxiliares que participan del mercado financiero.</li><br><li><strong>Empresas de Arrendamiento Financiero. -</strong> Brinda alternativas de financiamiento a través del leasing financiero.</li><br><li><strong>Mercado de Valores. -</strong> Tiene como principales actores a la Bolsa Boliviana de Valores, Agencias de Bolsa, Sociedades de Administración de Fondos de Inversión abiertos o cerrados (SAFI) y Entidad de Depósito de Valores.</li><br><li><strong>Empresas Administradoras de Tarjetas Electrónicas</strong></li><br><li><strong>Empresas transportadoras de material monetario y valores</strong></li><br><li><strong>Buros de Información. -</strong> Proveen información financiera del público para la toma de decisiones.</li><br><li><strong>Empresas de Servicios de Pago Móvil</strong> Otorgan, el servicio de pago electrónico a través del teléfono móvil. </li><br><li><strong>Entidades Aseguradoras. -</strong>Participan del sistema financiero a través de sus importantes inversiones.</li></ul>"
+        },
+        {
+            "postId": "2",
+            "titulo": "Entidades de Intermediación Financiera",
+            "descripcion": "Los activos totales del sistema de intermediación financiera conformada por 58 entidades a diciembre de 2018, sumaron Bs. 241.322 millones.",
+            "imagen": "imagen.jpg",
+            "tema": [
+                "Bancos"
+                
+            ],
+            "fecha": "2/8/2019",
+            "texto": "Gran parte de estos recursos se encuentran concentrados en Bancos Múltiples (76,2%), Banco Público (12,5%) y Cooperativas de Ahorro y Crédito - CAC (3,6%), que sumados alcanzan al 92%, el resto de los activos se encuentra distribuido en Instituciones Financieras de Desarrollo (IFD), Bancos PYMES (BPY), Banco de Desarrollo Público (BDP) y Entidades Financieras de Vivienda (EFV). <em>(Tabla N° 1)</em><br><br>La concentración de cartera del sistema de intermediación financiera replica la descripción precedente, es decir, Bancos Múltiples (BMU), Banco Público (BPU) y Cooperativas de Crédito y Ahorro (CAC).<br><br>Los depósitos del público alcanzaron a Bs. 173.063 millones a diciembre de 2018, concentrados en Bancos Múltiples (BMU), Banco Público (BPU) y Cooperativas de Ahorro y Crédito (CAC). Sin embargo, es importante destacar que las IFD (Instituciones Financieras de Desarrollo) por no captar depósitos del público fondea sus operaciones con préstamos de diferentes entidades financieras, del mismo modo algunos Bancos PYME, Entidades Financieras de Vivienda y el Banco de Desarrollo Productivo fondean parte de sus préstamos con aquellos que les otorgan las entidades de financiamiento, debido a que sus captaciones del público son inferiores a su cartera de préstamos."
+        },
+        {
+            "postId": "3",
+            "titulo": "Mercado de valores",
+            "descripcion": "Dentro del sistema económico boliviano, es importante considerar al “Mercado de Valores” como parte esencial dentro de la estructura económica del país; en los últimos años, el mercado de capitales para la negociación se incrementó gracias al crecimiento de entidades participantes que garantizaron a los inversionistas seguridad financiera.",
+            "imagen": "imagen.jpg",
+            "tema": [
+                "Entidad Financiera"
+            ],
+            "fecha": "3/8/2019",
+            "texto": "Uno de los actores que manifiesta el crecimiento señalado corresponde a los fondos de inversión, cuyo volumen de cartera registró crecimientos importantes (ver gráfico publicado por ASFI a diciembre 2018).\n\n<img src='/images/Post3Table1.png'>\n\n<strong>Tipos de valores</strong>\n\n<ul><li>Bonos</li><li>Bonos Participativos</li><li>Pagares</li><li>Pagares Bursátiles</li><li>Pagares de mesa de negociación</li><li>Acciones nominales y ordinarias</li></ul>\n\n<strong>Cómo funciona el mercado de valores</strong>\n\n<img src='/images/Post3Image1.png'>\n\nEl Mercado de Valores cuenta actualmente con 89 emisores que al 31 de Diciembre emitieron un valor de Bs. 8.070.396.462. Además, cuenta con 30 diferentes participantes según el siguiente detalle:\n\n<ul><li>Agencia de bolsa: 12</li><li>Bolsa de valores: 1</li><li>Entidades de depósito de valores: 1 </li><li>Sociedades Administradoras de Fondos de Inversión: 13</li><li>Titularizadoras: 3</li></ul>\n\nEl 85% de los valores, corresponde a Depósitos a Plazo Fijo (DPF), lo que refleja ausencia de un mercado de valores con opciones de inversión, como se muestra en el siguiente gráfico (publicado por ASFI):\n\n<img src='/images/Post3Table2.png'>"
+        },
+        {
+            "postId": "4",
+            "titulo": "Administradoras de Fondos de Inversión",
+            "descripcion": "Al hablar del sistema financiero de Bolivia, se hace referencia a las Administradoras de Fondos de Inversión (AFP), entidades que canalizan los aportes de los trabajadores de Bolivia para que los mismos sean invertidos en el sistema financiero, por tanto, se convierten en participantes de significativa importancia.",
+            "imagen": "imagen.jpg",
+            "tema": [
+                "Finanzas"
+            ],
+            "fecha": "4/8/2019",
+            "texto": "Los importes que recaudaron hasta diciembre 2018 (de manera acumulada) alcanzan a Bs. 97.417 millones, importe que equivale al 56% de los depósitos del público captados por las entidades de intermediación financiera.\n\n<img src='/images/Post4Table1.png'>\n\nGran parte de las inversiones de las AFP se encuentran invertidos en DPF a plazo fijo y en fondos de inversión cerrados, por lo que se constituyen en importantes actores del sistema financiero como fuente de fondeo.\n\nA manera de conclusión, es plausible decir que contar con una buena gestión y administración de los recursos financieros que se encuentran en poder de diferentes participantes; dentro del sistema financiero boliviano, es de vital importancia. No contar con sanas prácticas y búsqueda permanente del equilibrio entre rendimiento y riesgo financiero, podría afectar la estabilidad financiera del país y registrar diferentes efectos adversos.\n\nPara finalizar, se cita de manera textual la siguiente frase: “Señor… no me des tanto dinero que me olvide de ti, ni muy poco dinero que proteste contra ti…” En la gestión de riesgos financieros se debe encontrar ese punto medio (equilibrio) donde los rendimientos del riesgo asumido reflejen el perfil de riesgo en el cual las instituciones se sientan cómodas; es decir, si no si no están en equilibrio; se obtienen bajos rendimientos por aversión al riesgo, entonces surgen protestas contra el sistema financiero, si se obtienen importantes excedentes y se obtienen importantes excedentes de rendimiento se descuidan los controles internos. Las consecuencias en ambos casos serán adversas."
+        }
+    ]
+}
