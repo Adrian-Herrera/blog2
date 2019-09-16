@@ -1,72 +1,120 @@
 .company {
-  // border: 1px solid red;
+  border: 1px solid grey;
   position: relative;
   // width: calc(100% / 2 - 1rem);
-  width: 30%;
+  width: 23%;
   @include media-breakpoint-down(lg) {
     width: 45%;
   }
   @include media-breakpoint-down(sm) {
     width: 90%;
   }
-  height: 25rem;
+  height: 20rem;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   margin-left: 1rem;
   margin-top: 1rem;
   color: grey;
-  transform-origin: center;
-  transform: scale(1) translateZ(0);
-  transition: filter 200ms linear, transform 200ms linear;
-  // padding-top: 0.75rem;
+  // perspective: 1000px;
 
-  // border-radius: 6px;
-  //   background-color: white;
-  // box-shadow: 0 0 0 1px #c5d0d1;
-  // backface-visibility: hidden;
-  // transform-origin: 10% 50%;
-  // z-index: 1;
+  &__card {
+    // border: 1px solid orangered;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f1f1f1;
+    // perspective: 1000px;
+  }
+  &__img {
+    // border: 1px solid blue;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    // background-color: grey;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+    background-color: #bbb;
+    color: black;
+  }
 
-  // @media (min-width: 800px) { width: calc(100% / 3 - 1rem) }
+  &__img img {
+    width: 100%;
+    height: 100%;
+  }
 
-  &-move {
+  &__name {
+    font-size: 1rem;
+    // color: white;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    // border: 2px solid blue;
+    // vertical-align: bottom;
+    padding: 0;
+    width: 100%;
+    height: 12%;
+    transition: height 1s, background-color 0.5s ease-out;
+    -webkit-transition: height 1s, background-color 0.5s ease-out; /* For Safari 3.1 to 6.0 */
+    -moz-transition: height 1s, background-color 0.5s ease-out;
+    -o-transition: height 1s, background-color 0.5s ease-out;
+  }
+
+  &__img:hover {
+    // height: 70%;
+    // background-color: rgba(107, 107, 107, 0.5);
+    filter: grayscale(100%);
+    -webkit-filter: none;
+  }
+
+  // &__card:active .company__inner {
+  //   transform: rotateY(180deg);
+  // }
+
+  &__inner {
+    // border: 1px solid orangered;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  &__data {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+    padding: .5rem .3rem;
+  }
+
+  &__img-move {
     transition: all 600ms ease-in-out 50ms;
   }
-  &-enter-active {
+  &__img-enter-active {
     transition: all 300ms ease-out;
   }
 
-  &-leave-active {
+  &__img-leave-active {
     transition: all 200ms ease-in;
     position: absolute;
     z-index: 0;
   }
-
-  &:hover {
-    transform: scale(1.1) translateZ(0);
-    color: black;
-  }
-
-  &__img {
-    // border: 1px solid blue;
-    width: 90%;
-    height: 80%;
-    margin: auto;
-    background-color: grey;
-  }
-
-  &__name {
-    // border: 2px solid blue;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    width: 100%;
-    height: 12%;
-  }
 }
 .cont_persons {
-    // border: 3px solid black;
+  // border: 3px solid black;
   padding: 0;
   width: 70%;
 }

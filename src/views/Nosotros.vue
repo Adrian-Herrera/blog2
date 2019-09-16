@@ -1,22 +1,38 @@
 <template>
   <div>
     <ContentTitleBar :title="title" />
-    <b-row align-h="center" class>
+    <b-row align-h="center">
       <div class="cont_persons">
         <transition-group name="company" tag="ul" class="content__list">
           <li class="company" v-for="person in lists" :key="person.id">
-            <div class="company__img"></div>
-            <ul class="company__name" id="name">
-              <h3 style="margin: auto;">{{ person.name }}</h3>
-            </ul>
+            <!-- <div class="company__card" id="card">
+              <div class="company__inner" :style="{transform: flip}" >
+                <div class="company__img">
+                  <img :src="person.foto" alt="Foto" />
+                  <ul class="company__name" id="name">
+                    <p style="margin: auto;">{{ person.name }}</p>
+                  </ul>
+                </div>
+                <div class="company__data">
+                  <p style="margin: auto;">{{ person.name }}</p>
+                </div>
+              </div>
+            </div> -->
+            <PresentationCard
+              :name="person.name"
+              :foto="person.foto"
+              :info="person.info"
+            ></PresentationCard>
           </li>
         </transition-group>
+        <!-- <PresentationCard></PresentationCard> -->
       </div>
     </b-row>
   </div>
 </template>
-<script >
+<script>
 import ContentTitleBar from "@/components/ContentTitleBar.vue";
+import PresentationCard from "@/components/PresentationCard.vue";
 import json from "@/json/nosotros.json";
 export default {
   data() {
@@ -26,7 +42,8 @@ export default {
       options: {
         minSize: 11,
         maxSize: 60
-      }
+      },
+      flip: "none"
     };
   },
   created: function() {
@@ -37,6 +54,6 @@ export default {
       this.lists = json.persons;
     }
   },
-  components: { ContentTitleBar }
+  components: { ContentTitleBar, PresentationCard }
 };
 </script>
