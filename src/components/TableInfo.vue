@@ -1,15 +1,15 @@
 <script>
-import { Bar } from 'vue-chartjs'
+import { Bar } from "vue-chartjs";
 
 export default {
   extends: Bar,
   data: () => ({
     chartdata: {
-      labels: ['January', 'February'],
+      labels: ["January", "February"],
       datasets: [
         {
-          label: 'Data One',
-          backgroundColor: '#f87979',
+          label: "Data One",
+          backgroundColor: "#f87979",
           data: [40, 20]
         }
       ]
@@ -20,8 +20,8 @@ export default {
     }
   }),
 
-  mounted () {
-    this.renderChart(this.chartdata, this.options)
+  mounted() {
+    this.renderChart(this.chartdata, this.options);
   }
-}
+};
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="ContentTitleBar">
-    <img src="@/assets/LogoNavBar.png" alt="Logo"  class="logo" />
-    <p class="label" >{{title}}</p>
+    <img src="@/assets/LogoNavBar.png" alt="Logo" class="logo" />
+    <p class="label">{{ title }}</p>
   </div>
 </template>
 
@@ -18,13 +18,7 @@ export default {
       } else if (this.title.length < 35) {
         return { left: "22%" };
       } else {
-        return { display: "none"};
-      }
-    },
-
-    getFontSize() {
-      if (this.title.length > 35){
-        return {fontSize: "1.5rem"}
+        return { display: "none" };
       }
     }
   }
@@ -48,7 +42,7 @@ $iconSize: 4rem;
   .label {
     position: relative;
     margin-right: 1rem;
-    margin-left: 7px; 
+    margin-left: 7px;
     font-weight: bold;
     font-size: 2rem;
     @include media-breakpoint-down(sm) {

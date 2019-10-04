@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <div v-for="(item,index) in lists" :key="index">
+    <div v-for="(item, index) in lists" :key="index">
       <div v-if="proId == item.postId">
         <ContentTitleBar :title="item.titulo" />
         <b-row class="post_image">
@@ -9,7 +9,7 @@
           </div>
         </b-row>
         <b-row class="post_text">
-          <p class="post_desc">{{ item.descripcion}}</p>
+          <p class="post_desc">{{ item.descripcion }}</p>
           <p class="post_content" v-html="item.texto"></p>
           <div v-if="item.postId == 2">
             <Table1></Table1>
@@ -27,7 +27,6 @@ import ContentTitleBar from "@/components/ContentTitleBar.vue";
 import Table1 from "@/components/Table1.vue";
 import Table2 from "@/components/Table2.vue";
 import Table3 from "@/components/Table3.vue";
-import TableInfo from "@/components/TableInfo.vue";
 export default {
   data() {
     return {
@@ -52,6 +51,6 @@ export default {
       };
     }
   },
-  components: { ContentTitleBar, Table1, Table2, Table3, TableInfo }
+  components: { ContentTitleBar, Table1, Table2, Table3 }
 };
 </script>
