@@ -1,7 +1,7 @@
 <template>
   <div class="ContentTitleBar">
-    <img src="@/assets/LogoNavBar.png" alt="Logo" :style="getLogoPosition" class="logo" />
-    <h1 class="label">{{title}}</h1>
+    <img src="@/assets/LogoNavBar.png" alt="Logo"  class="logo" />
+    <p class="label" >{{title}}</p>
   </div>
 </template>
 
@@ -15,10 +15,16 @@ export default {
     getLogoPosition() {
       if (this.title.length < 10) {
         return { left: "30%" };
-      } else if (this.title.length < 30) {
+      } else if (this.title.length < 35) {
         return { left: "22%" };
       } else {
-        return { display: "none" };
+        return { display: "none"};
+      }
+    },
+
+    getFontSize() {
+      if (this.title.length > 35){
+        return {fontSize: "1.5rem"}
       }
     }
   }
@@ -40,13 +46,21 @@ $iconSize: 4rem;
   overflow: hidden;
   padding: 0 5%;
   .label {
+    position: relative;
+    margin-right: 1rem;
+    margin-left: 7px; 
     font-weight: bold;
+    font-size: 2rem;
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+    }
+    text-align: left;
   }
   .logo {
     @include media-breakpoint-down(sm) {
       display: none;
     }
-    position: absolute;
+    position: relative;
     height: $iconSize;
     width: $iconSize;
   }

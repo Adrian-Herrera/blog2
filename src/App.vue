@@ -2,7 +2,7 @@
   <div id="app" class="home">
     <TitleBar class="title"></TitleBar>
     <b-container fluid class="cont">
-      <transition name="slide-fade" mode="out-in">
+      <transition name="fade" mode="out-in">
         <router-view />
       </transition>
     </b-container>
@@ -25,6 +25,3 @@ export default {
   top: 0;
 }
 </style>
-
-
-

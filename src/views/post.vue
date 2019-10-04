@@ -11,6 +11,11 @@
         <b-row class="post_text">
           <p class="post_desc">{{ item.descripcion}}</p>
           <p class="post_content" v-html="item.texto"></p>
+          <div v-if="item.postId == 2">
+            <Table1></Table1>
+            <Table2></Table2>
+            <Table3></Table3>
+          </div>
         </b-row>
       </div>
     </div>
@@ -19,6 +24,10 @@
 <script>
 import json from "@/json/publicaciones.json";
 import ContentTitleBar from "@/components/ContentTitleBar.vue";
+import Table1 from "@/components/Table1.vue";
+import Table2 from "@/components/Table2.vue";
+import Table3 from "@/components/Table3.vue";
+import TableInfo from "@/components/TableInfo.vue";
 export default {
   data() {
     return {
@@ -43,6 +52,6 @@ export default {
       };
     }
   },
-  components: { ContentTitleBar }
+  components: { ContentTitleBar, Table1, Table2, Table3, TableInfo }
 };
 </script>
