@@ -9,7 +9,7 @@
       </div>
       <div class="company__data">
         <p class="data_name">{{ name }}</p>
-        <p class="data_info" :style="InfoSize">{{ info }}</p>
+        <p class="data_info" :style="InfoSize" v-html="info"></p>
       </div>
     </div>
   </div>
