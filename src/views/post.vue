@@ -1,5 +1,6 @@
 <template>
   <div class="post">
+    <backtotop :Visible="Visible"></backtotop>
     <div v-for="(item, index) in lists" :key="index">
       <div v-if="proId == item.postId">
         <ContentTitleBar :title="item.titulo" />
@@ -24,6 +25,7 @@
 <script>
 import json from "@/json/publicaciones.json";
 import ContentTitleBar from "@/components/ContentTitleBar.vue";
+import backtotop from "@/components/goTop.vue";
 import Table1 from "@/components/Table1.vue";
 import Table2 from "@/components/Table2.vue";
 import Table3 from "@/components/Table3.vue";
@@ -32,11 +34,22 @@ export default {
     return {
       proId: this.$route.params.Pid,
       title: String,
-      lists: []
+      lists: [],
+      Visible: false,
+      scrolled: false
     };
   },
+  components: { ContentTitleBar, backtotop, Table1, Table2, Table3 },
   created: function() {
     this.getPost();
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  mounted() {
+    window.scrollTo(0, 0);
+    // this.scroll()
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     getPost: function() {
@@ -49,8 +62,16 @@ export default {
           require(`@/assets/${src}`) +
           ")"
       };
+    },
+    goTop() {
+      window.scrollTo(0, 0);
+    },
+    handleScroll() {
+      if ((this.scrolled = window.scrollY > 1000)) {
+        this.Visible = true;
+        // console.log(this.Visible)
+      } else this.Visible = false;
     }
-  },
-  components: { ContentTitleBar, Table1, Table2, Table3 }
+  }
 };
 </script>

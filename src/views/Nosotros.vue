@@ -31,6 +31,9 @@ export default {
   created: function() {
     this.getPersons();
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     getPersons: function() {
       this.lists = json.persons;

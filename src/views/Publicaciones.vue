@@ -2,30 +2,6 @@
   <div>
     <ContentTitleBar :title="title" />
     <b-row class="feed">
-      <!-- <transition-group name="fade"> -->
-      <!-- <b-col
-        class="align-self-center"
-        cols="12"
-        sm="12"
-        md="6"
-        lg="4"
-        v-for="item in lists"
-        :key="item.titulo"
-      >
-        <div class="module" :style="getBgImg('post1.jpg')">
-          <header class>
-            <p @click="goPost(item.postId, item.titulo)">{{ item.titulo.toUpperCase() }}</p>
-            <b-badge
-              pill
-              variant="primary"
-              class="tag"
-              @click="hi()"
-              v-for="tip in item.tema"
-              :key="tip"
-            >{{ tip }}</b-badge>
-          </header>
-        </div>
-      </b-col>-->
       <li
         class="publication"
         v-for="item in lists"
@@ -35,10 +11,10 @@
         <div class="publication__img" :style="getBgImg('post1.jpg')"></div>
         <div class="publication__info">
           <ul class="publication__title">
-            <h4>{{ item.titulo}}</h4>
+            <h4>{{ item.titulo }}</h4>
           </ul>
           <ul class="publication__desc">
-            <p>{{ item.descripcion}}</p>
+            <p>{{ item.descripcion }}</p>
           </ul>
         </div>
       </li>
@@ -61,6 +37,9 @@ export default {
   created: function() {
     this.getPost();
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     goPost(PostId, PostName) {
       this.$router.push({
@@ -78,15 +57,8 @@ export default {
           require(`@/assets/${src}`) +
           ")"
       };
-    },
-    hi() {
-      console.log("hi");
     }
   },
   components: { ContentTitleBar }
 };
 </script>
-
-
-
-
