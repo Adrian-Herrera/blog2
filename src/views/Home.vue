@@ -1,7 +1,10 @@
 <template>
   <div class="bhome">
     <div class="background">
-      <b-img class="bimage" :src="require('@/assets/LogoHomeBlanco.png')"></b-img>
+      <b-img
+        class="bimage"
+        :src="require('@/assets/LogoHomeBlanco.png')"
+      ></b-img>
     </div>
   </div>
 </template>

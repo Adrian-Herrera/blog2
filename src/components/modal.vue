@@ -1,6 +1,6 @@
 <template>
   <b-modal :id="id" centered hide-footer>
-    <template slot="modal-title">{{title}}</template>
+    <template slot="modal-title">{{ title }}</template>
     <div class="d-block text-center">
       <!-- <h3>{{link}}</h3> -->
       <b-embed
@@ -23,4 +23,3 @@ export default {
   }
 };
 </script>
-

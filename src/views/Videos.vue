@@ -26,7 +26,11 @@
           @click="$bvModal.show(item.id)"
         ></b-card>
 
-        <VideoModal :id="item.id" :title="item.name" :link="item.link"></VideoModal>
+        <VideoModal
+          :id="item.id"
+          :title="item.name"
+          :link="item.link"
+        ></VideoModal>
       </b-col>
     </b-row>
     <div>
@@ -54,13 +58,6 @@ export default {
       this.lists = json.videos;
     }
   },
-  computed: {
-    setInfo(Name, Link) {
-      this.name = "Name" + Name;
-      this.link = Link;
-    }
-  },
   components: { VideoModal, ContentTitleBar }
 };
 </script>
-
