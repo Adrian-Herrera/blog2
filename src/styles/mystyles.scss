@@ -3,6 +3,7 @@
 @import "node_modules/bootstrap/scss/variables";
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 @import "@/styles/titlebar.scss";
 @import "@/styles/feed.scss";
@@ -13,6 +14,7 @@
 @import "@/styles/nosotros.scss";
 @import "@/styles/publication.scss";
 @import "@/styles/presentation-card.scss";
+@import "@/styles/login.scss";
 
 // * Esta es la definicion de colores de la pagina
 @import "@/styles/theme.scss";

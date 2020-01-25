@@ -5,7 +5,7 @@ import Home from "./views/Home.vue";
 Vue.use(Router);
 
 export default new Router({
-  mode: "hash",
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
@@ -32,6 +32,18 @@ export default new Router({
       name: "nosotros",
       component: () =>
         import(/* webpackChunkName: "nosotros" */ "./views/Nosotros.vue")
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: () =>
+        import(/* webpackChunkName: "dashboard" */ "./views/Dashboard.vue")
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: () =>
+        import(/* webpackChunkName: "admin" */ "./views/Admin.vue")
     },
     {
       path: "/:Pname",

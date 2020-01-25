@@ -1,27 +1,14 @@
 <template>
-  <div id="app" class="home">
-    <TitleBar class="title"></TitleBar>
-    <b-container fluid class="cont">
-      <transition name="fade" mode="out-in">
-        <router-view />
-      </transition>
-    </b-container>
+  <div id="app">
+    <Main></Main>
   </div>
 </template>
 
 <script>
-import TitleBar from "@/components/TitleBar.vue";
+import Main from "@/views/Main.vue";
 export default {
   components: {
-    TitleBar
+    Main
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.title {
-  position: sticky;
-  z-index: 2;
-  top: 0;
-}
-</style>

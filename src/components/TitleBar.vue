@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container fluid>
+    <b-container fluid style="display: ">
       <b-row class="mainbar">
         <b-navbar class="titlebar" toggleable="md" type="dark">
           <b-navbar-brand to="/">
@@ -18,6 +18,7 @@
               <b-nav-item to="publicaciones">Publicaciones</b-nav-item>
               <b-nav-item to="videos">Videos</b-nav-item>
               <b-nav-item to="nosotros">Nosotros</b-nav-item>
+              <b-nav-item to="admin">Login</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
