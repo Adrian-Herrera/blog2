@@ -91,8 +91,12 @@ export default {
       st2: "display: none; opacity: 0",
       isActive: true,
       isOp: true,
-      usuario: "",
-      contraseña: ""
+      loginUser: "",
+      loginPass: "",
+      RegUser: "",
+      RegMail: "",
+      RegPass: "",
+      RegRePass: ""
     };
   },
   methods: {

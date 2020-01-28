@@ -37,7 +37,39 @@ export default new Router({
       path: "/dashboard",
       name: "dashboard",
       component: () =>
-        import(/* webpackChunkName: "dashboard" */ "./views/Dashboard.vue")
+        import(/* webpackChunkName: "dashboard" */ "./views/Dashboard.vue"),
+      children: [
+        {
+          path: "adminPublicaciones",
+          name: "adminPublicaciones",
+          component: () =>
+            import(
+              /* webpackChunkName: "dashboard" */ "./views/AdminPublicaciones.vue"
+            )
+        },
+        {
+          path: "adminVideos",
+          name: "adminVideos",
+          component: () =>
+            import(
+              /* webpackChunkName: "dashboard" */ "./views/AdminVideos.vue"
+            )
+        },
+        {
+          path: "adminPerfil",
+          name: "adminPerfil",
+          component: () =>
+            import(
+              /* webpackChunkName: "dashboard" */ "./views/AdminPerfil.vue"
+            )
+        },
+        {
+          path: "NuevoPost",
+          name: "NuevoPost",
+          component: () =>
+            import(/* webpackChunkName: "dashboard" */ "./views/NuevoPost.vue")
+        }
+      ]
     },
     {
       path: "/admin",

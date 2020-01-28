@@ -15,10 +15,10 @@
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="title_nav" fill>
-              <b-nav-item to="publicaciones">Publicaciones</b-nav-item>
-              <b-nav-item to="videos">Videos</b-nav-item>
-              <b-nav-item to="nosotros">Nosotros</b-nav-item>
-              <b-nav-item to="admin">Login</b-nav-item>
+              <b-nav-item to="/publicaciones">Publicaciones</b-nav-item>
+              <b-nav-item to="/videos">Videos</b-nav-item>
+              <b-nav-item to="/nosotros">Nosotros</b-nav-item>
+              <b-nav-item to="/admin">Login</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
