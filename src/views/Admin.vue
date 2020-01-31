@@ -37,7 +37,12 @@
           </form>
         </div>
         <div class="l-form" :class="{ hidden: isActive, changeopacity: isOp }">
-          <form @submit.prevent="validate()" id="register-form" method="post">
+          <form
+            @submit.prevent="register()"
+            action=""
+            id="register-form"
+            method="post"
+          >
             <div class="form-control">
               <input
                 type="text"
@@ -87,8 +92,6 @@
 export default {
   data() {
     return {
-      st1: "display: block; opacity: 1",
-      st2: "display: none; opacity: 0",
       isActive: true,
       isOp: true,
       loginUser: "",
@@ -111,7 +114,8 @@ export default {
     validate: function() {
       console.log({ name: this.usuario, contraseña: this.contraseña });
       this.$router.push("dashboard");
-    }
+    },
+    register: function() {}
   }
 };
 </script>

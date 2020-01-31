@@ -1,5 +1,32 @@
 <template>
   <div class="editor">
+    <div>
+      <select v-model="DataInfo.Id_cat">
+        <option
+          v-for="cat in CategoryList"
+          :key="cat.Id_cat"
+          :value="cat.Id_cat"
+          >{{ cat.category }}</option
+        >
+        <!-- <option>B</option>
+        <option>C</option> -->
+      </select>
+      <select v-model="DataInfo.Public">
+        <option :value="1"> Publico </option>
+        <option :value="0"> Borrador </option>
+        <!-- <option>B</option>
+        <option>C</option> -->
+      </select>
+      <h5>Titulo</h5>
+      <input type="text" id="titulo" v-model="DataInfo.Title" />
+      <h5>Descripcion</h5>
+      <textarea
+        rows="4"
+        cols="80"
+        id="descripcion"
+        v-model="DataInfo.Description"
+      ></textarea>
+    </div>
     <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
       <div class="menubar">
         <button
@@ -128,6 +155,7 @@
     </editor-menu-bar>
 
     <editor-content class="editor__content" :editor="editor" />
+    <div><button class="button" @click="save()">Guardar</button></div>
     <div class="export">
       <h3>HTML</h3>
       <pre><code>{{ html }}</code></pre>
@@ -159,14 +187,21 @@ import {
   Image,
   Focus
 } from "tiptap-extensions";
+import PostService from "../PostService";
 export default {
   components: {
     EditorContent,
     EditorMenuBar,
     Icon
   },
+  props: {
+    data: Object
+  },
   data() {
     return {
+      DataInfo: [],
+      CategoryList: [],
+      text: "",
       editor: new Editor({
         extensions: [
           new Blockquote(),
@@ -193,28 +228,76 @@ export default {
           })
         ],
         autoFocus: true,
-        content: `
-          <h2>
-            Export HTML or JSON
-          </h2>
-          <p>
-            You are able to export your data as <code>HTML</code> or <code>JSON</code>.
-          </p>
-        `,
-        onUpdate: ({ getJSON, getHTML }) => {
+        content: "",
+        onUpdate: ({ getHTML }) => {
           this.html = getHTML();
         }
       }),
-      html: "Update content to see changes"
+      html: "<div>Update content to see changes</div>"
     };
   },
   methods: {
+    async save() {
+      if (!this.DataInfo.Id_art) {
+        this.newPost();
+      } else {
+        this.editPost();
+      }
+    },
+    async newPost() {
+      this.DataInfo.Body = this.html;
+      try {
+        let status;
+        status = await PostService.insertPost(this.DataInfo);
+        if (status.status == 200) {
+          this.$router.push({ path: "/dashboard/adminPublicaciones" });
+        }
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
+    async editPost() {
+      this.DataInfo.Body = this.html;
+      try {
+        let status;
+        status = await PostService.editPost(this.DataInfo);
+        if (status.status == 200) {
+          this.$router.push({ path: "/dashboard/adminPublicaciones" });
+        }
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
+    async getCat() {
+      try {
+        this.CategoryList = await PostService.getCategory("/CategoryList");
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
     showImagePrompt(command) {
-      const src = prompt("Enter the url of your image here");
+      const src = prompt("Ingresa la dirección de tu imagen aqui");
       if (src !== null) {
         command({ src });
       }
+    },
+    changeContent() {
+      this.editor.setContent(this.DataInfo.Body);
+    },
+    loadData() {
+      this.DataInfo = this.data;
+    },
+    showText() {
+      console.log(this.DataInfo.Title);
+      console.log(this.DataInfo.Description);
+      this.DataInfo.Body = this.html;
+      console.log(this.DataInfo.Body);
     }
+  },
+  mounted() {
+    this.loadData();
+    this.getCat();
+    this.changeContent();
   }
 };
 </script>

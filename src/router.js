@@ -64,10 +64,17 @@ export default new Router({
             )
         },
         {
-          path: "NuevoPost",
-          name: "NuevoPost",
+          path: "editor",
+          name: "Editor",
           component: () =>
-            import(/* webpackChunkName: "dashboard" */ "./views/NuevoPost.vue")
+            import(/* webpackChunkName: "dashboard" */ "./views/Editor.vue")
+        },
+        {
+          path: "editor/:id",
+          name: "EditorID",
+          component: () =>
+            import(/* webpackChunkName: "dashboard" */ "./views/Editor.vue"),
+          props: true
         }
       ]
     },

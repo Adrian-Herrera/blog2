@@ -1,5 +1,5 @@
 .dashboard {
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -34,14 +34,14 @@
     }
   }
   .content {
-    border: 3px solid #4caf50;
+    // border: 3px solid #4caf50;
     width: 100%;
     margin: 1rem;
   }
   .adm-publication {
     display: flex;
     flex-flow: column nowrap;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     padding: 3rem;
     .button {
       border: none;
@@ -75,14 +75,10 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    border: 1px solid black;
-    // margin: 0 3rem;
-    // margin-top: 2rem;
-    padding: 5px;
-    h3 {
-      // border:1px solid green;
-      margin: 0;
-    }
+    border: none;
+    background-color: #435d7d;
+    color: white;
+    padding: 1rem 2rem;
   }
   .table-body {
     // margin: 0 3rem;
@@ -94,21 +90,35 @@
     }
     table {
       table-layout: auto;
-    }
-
-    table,
-    th,
-    td {
-      border: 1px solid black;
-    }
-    th,
-    td {
-      padding: 10px;
-      text-align: left;
-    }
-
-    table {
       width: 100%;
+    }
+    thead {
+      border-bottom: 1px solid rgb(187, 187, 187);
+      text-align: center;
+    }
+
+    th,
+    td {
+      border: none;
+      padding: 1rem;
+    }
+
+    td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgb(187, 187, 187);
+    }
+
+    .Borrador {
+      background-color: rgb(245, 137, 137);
+      padding: 0.3rem;
+      border-radius: 10px;
+    }
+
+    .Publico {
+      background-color: rgb(113, 187, 113);
+      padding: 0.3rem;
+      border-radius: 10px;
     }
   }
   .nuevaPubli {
@@ -131,7 +141,6 @@
     }
   }
   .editor__content {
-    
     p {
       text-align: justify;
     }
@@ -141,7 +150,7 @@
         margin-top: 1.5rem;
       }
     }
-    h1{
+    h1 {
       text-align: center;
     }
   }
@@ -150,4 +159,14 @@
     width: 100%;
     display: none;
   }
+}
+input,
+textarea {
+  font-family: "Lora", serif;
+  width: 80%;
+  margin: 0.5rem;
+}
+textarea {
+  font-weight: bold;
+  font-style: italic;
 }
