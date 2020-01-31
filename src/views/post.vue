@@ -1,28 +1,25 @@
 <template>
-  <div class="post">
+  <div class="post" v-if="render">
     <backtotop :Visible="Visible"></backtotop>
-    <div v-for="(item, index) in lists" :key="index">
-      <div v-if="proId == item.postId">
-        <ContentTitleBar :title="item.titulo" />
-        <b-row class="post_image">
-          <div class="post_title">
-            <h2>Por Ingenieria Economica</h2>
-          </div>
-        </b-row>
-        <b-row class="post_text">
-          <p class="post_desc">{{ item.descripcion }}</p>
-          <p class="post_content" v-html="item.texto"></p>
-          <div v-if="item.postId == 2">
-            <Table1></Table1>
-            <Table2></Table2>
-            <Table3></Table3>
-          </div>
-        </b-row>
+    <ContentTitleBar :title="data[0].Title" v-if="data[0].Title" />
+    <b-row class="post_image">
+      <div class="post_title">
+        <h2>Por Ingenieria Economica</h2>
       </div>
-    </div>
+    </b-row>
+    <b-row class="post_text">
+      <p class="post_desc">{{ data[0].Description }}</p>
+      <p class="post_content" v-html="data[0].Body"></p>
+      <div v-if="data[0].Id_art == 2">
+        <Table1></Table1>
+        <Table2></Table2>
+        <Table3></Table3>
+      </div>
+    </b-row>
   </div>
 </template>
 <script>
+import PostService from "../PostService";
 import json from "@/json/publicaciones.json";
 import ContentTitleBar from "@/components/ContentTitleBar.vue";
 import backtotop from "@/components/goTop.vue";
@@ -32,19 +29,21 @@ import Table3 from "@/components/Table3.vue";
 export default {
   data() {
     return {
+      data: [],
       proId: this.$route.params.Pid,
-      title: String,
-      lists: [],
+      render: false,
       Visible: false,
       scrolled: false
     };
   },
   components: { ContentTitleBar, backtotop, Table1, Table2, Table3 },
-  created: function() {
-    this.getPost();
+  async created() {
     window.addEventListener("scroll", this.handleScroll);
   },
-  mounted() {
+  async beforeMount() {
+    this.getId();
+  },
+  async mounted() {
     window.scrollTo(0, 0);
     // this.scroll()
   },
@@ -52,8 +51,16 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    getPost: function() {
-      this.lists = json.publicaciones;
+    async getId() {
+      try {
+        this.data = await PostService.getUpdatePost(
+          "/updatePost/" + this.proId
+        );
+        this.render = true;
+        // console.log(this.data);
+      } catch (err) {
+        this.error = err.message;
+      }
     },
     getBgImg(src) {
       return {

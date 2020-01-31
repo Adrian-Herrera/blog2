@@ -1,8 +1,7 @@
 import axios from "axios";
-import { format } from "timeago.js";
 import moment from "moment";
 
-const url = "http://localhost:4000/links";
+const url = "links";
 moment.locale("es");
 class PostService {
   // Get Posts
@@ -16,6 +15,23 @@ class PostService {
             ...post,
             id: new String(post.Id_art),
             title: new String(post.Title),
+            date: new String(moment(post.Create_at, "YYYYMMDD").fromNow())
+          }))
+        );
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  static getPublicPosts(endpoint) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const res = await axios.get(url + endpoint);
+        const data = res.data;
+        resolve(
+          data.map(post => ({
+            ...post,
             date: new String(moment(post.Create_at, "YYYYMMDD").fromNow())
           }))
         );

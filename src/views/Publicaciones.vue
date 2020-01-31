@@ -4,17 +4,19 @@
     <b-row class="feed">
       <li
         class="publication"
-        v-for="item in lists"
-        :key="item.titulo"
-        @click="goPost(item.postId, item.titulo)"
+        v-for="(post, index) in posts"
+        :item="post"
+        :index="index"
+        :key="index"
+        @click="goPost(post.Id_art, post.Title)"
       >
         <div class="publication__img" :style="getBgImg('post1.jpg')"></div>
         <div class="publication__info">
           <ul class="publication__title">
-            <h4>{{ item.titulo }}</h4>
+            <h4>{{ post.Title }}</h4>
           </ul>
           <ul class="publication__desc">
-            <p>{{ item.descripcion }}</p>
+            <p>{{ post.Description }}</p>
           </ul>
         </div>
       </li>
@@ -26,16 +28,21 @@
 <script>
 import json from "@/json/publicaciones.json";
 import ContentTitleBar from "@/components/ContentTitleBar.vue";
+import PostService from "../PostService";
 export default {
   data() {
     return {
-      lists: [],
+      posts: [],
       title: "Publicaciones"
     };
   },
-
-  created: function() {
-    this.getPost();
+  async created() {
+    try {
+      this.posts = await PostService.getPublicPosts("/post");
+      // console.log(this.posts);
+    } catch (err) {
+      this.error = err.message;
+    }
   },
   mounted() {
     window.scrollTo(0, 0);
@@ -46,9 +53,6 @@ export default {
         name: "post",
         params: { Pid: PostId, Pname: PostName }
       });
-    },
-    getPost: function() {
-      this.lists = json.publicaciones;
     },
     getBgImg(src) {
       return {
