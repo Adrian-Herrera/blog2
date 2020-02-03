@@ -2,7 +2,7 @@
   // border: 3px solid black;
   height: 100%;
   width: 100%;
-  text-align: justify;
+  // text-align: justify;
   //   position: absolute;
   &_image {
     // border: 3px solid black;
@@ -32,7 +32,9 @@
 .editor__content {
   width: 1100px;
 }
-
+.editor__content{
+  margin: 1rem;
+}
 .post_text,
 .editor__content {
   margin: auto auto 0;
@@ -46,6 +48,13 @@
     font-size: 20px;
     text-size-adjust: 100%;
     margin: 1rem 0;
+    text-align: justify;
+  }
+  ul {
+    li {
+      // border: 1px solid red;
+      margin-top: 1.5rem;
+    }
   }
   @media (max-width: 600px) {
     p {

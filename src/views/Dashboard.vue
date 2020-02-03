@@ -1,13 +1,13 @@
 <template>
   <div class="dashboard">
     <div class="navbar">
-      <router-link tag="li" to="/dashboard/adminPublicaciones" class="item">
+      <router-link tag="li" to="/dashboard/Publicaciones" class="item">
         Publicaciones
       </router-link>
-      <router-link tag="li" to="/dashboard/adminVideos" class="item">
+      <router-link tag="li" to="/dashboard/Videos" class="item">
         Videos
       </router-link>
-      <router-link tag="li" to="/dashboard/adminPerfil" class="item">
+      <router-link tag="li" to="/dashboard/Perfil" class="item">
         Perfil
       </router-link>
       <div class="item">

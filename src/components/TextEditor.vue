@@ -1,6 +1,7 @@
 <template>
   <div class="editor">
-    <div>
+    <div class="input-group">
+      <h5>Escoja una categoria</h5>
       <select v-model="DataInfo.Id_cat">
         <option
           v-for="cat in CategoryList"
@@ -11,6 +12,7 @@
         <!-- <option>B</option>
         <option>C</option> -->
       </select>
+      <h5>Escoja si sera visible</h5>
       <select v-model="DataInfo.Public">
         <option :value="1"> Publico </option>
         <option :value="0"> Borrador </option>
@@ -22,7 +24,6 @@
       <h5>Descripcion</h5>
       <textarea
         rows="4"
-        cols="80"
         id="descripcion"
         v-model="DataInfo.Description"
       ></textarea>
@@ -155,7 +156,7 @@
     </editor-menu-bar>
 
     <editor-content class="editor__content" :editor="editor" />
-    <div><button class="button" @click="save()">Guardar</button></div>
+    <div><button class="editor-button" @click="save()">Guardar</button></div>
     <div class="export">
       <h3>HTML</h3>
       <pre><code>{{ html }}</code></pre>
@@ -283,6 +284,7 @@ export default {
     },
     changeContent() {
       this.editor.setContent(this.DataInfo.Body);
+      this.html = this.DataInfo.Body;
     },
     loadData() {
       this.DataInfo = this.data;

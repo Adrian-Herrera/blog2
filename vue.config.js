@@ -3,8 +3,10 @@ module.exports = {
   outputDir: path.resolve(__dirname, "../blog_server/public"),
   devServer: {
     proxy: {
-      "^/links": {
-        target: "http://localhost:4000"
+      "/links": {
+        target: "http://localhost:4000",
+        ws: true,
+        changeOrigin: true
       }
     }
   },

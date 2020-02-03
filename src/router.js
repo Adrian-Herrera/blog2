@@ -36,11 +36,12 @@ export default new Router({
     {
       path: "/dashboard",
       name: "dashboard",
+      redirect: "/dashboard/Publicaciones",
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/Dashboard.vue"),
       children: [
         {
-          path: "adminPublicaciones",
+          path: "Publicaciones",
           name: "adminPublicaciones",
           component: () =>
             import(
@@ -48,7 +49,7 @@ export default new Router({
             )
         },
         {
-          path: "adminVideos",
+          path: "Videos",
           name: "adminVideos",
           component: () =>
             import(
@@ -56,7 +57,7 @@ export default new Router({
             )
         },
         {
-          path: "adminPerfil",
+          path: "Perfil",
           name: "adminPerfil",
           component: () =>
             import(
@@ -88,6 +89,10 @@ export default new Router({
       path: "/:Pname",
       name: "post",
       component: () => import(/* webpackChunkName: "post" */ "./views/post.vue")
+    },
+    {
+      path: "*",
+      component: Home
     }
   ]
 });
