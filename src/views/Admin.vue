@@ -147,11 +147,16 @@ export default {
     async registerUser() {
       try {
         // console.log(this.register);
-        let res = await PostService.NewUser(this.register);
-        if (res.success === true) {
-          this.msg = res.message;
+        // console.log(this.register.password == this.register.repassword);
+        if (this.register.password == this.register.repassword) {
+          let res = await PostService.NewUser(this.register);
+          if (res.success === true) {
+            this.msg = res.message;
+          }
+          console.log(res);
+        } else {
+          this.msg = "Las contraseñas no son iguales";
         }
-        console.log(res);
         // await PostService.NewUser(this.register);
       } catch (err) {
         this.error = err.message;
