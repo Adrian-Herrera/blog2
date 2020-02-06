@@ -251,7 +251,7 @@ export default {
         let status;
         status = await PostService.insertPost(this.DataInfo);
         if (status.status == 200) {
-          this.$router.push({ path: "/dashboard/adminPublicaciones" });
+          this.$router.push({ path: "/dashboard/Publicaciones" });
         }
       } catch (err) {
         this.error = err.message;
@@ -263,7 +263,7 @@ export default {
         let status;
         status = await PostService.editPost(this.DataInfo);
         if (status.status == 200) {
-          this.$router.push({ path: "/dashboard/adminPublicaciones" });
+          this.$router.push({ path: "/dashboard/Publicaciones" });
         }
       } catch (err) {
         this.error = err.message;

@@ -1,5 +1,8 @@
 <template>
   <div class="l-background">
+    <div class="message" v-if="msg">
+      <p>{{ msg }}</p>
+    </div>
     <div class="login-cont">
       <div class="l-nav">
         <a @click="Loginbtn()" :class="{ active: isActive }">Iniciar Sesion</a>
@@ -12,14 +15,15 @@
           class="l-form"
           :class="{ hidden: !isActive, changeopacity: !isOp }"
         >
-          <form @submit.prevent="validate()" id="login-form" method="post">
+          <form @submit.prevent="loginUser()" id="login-form" method="post">
             <div class="form-control">
               <input
                 type="text"
-                name="User"
+                name="mail"
                 id="login-user"
-                placeholder="Usuario"
+                placeholder="correo"
                 required="required"
+                v-model="login.mail"
               />
             </div>
             <div class="form-control">
@@ -29,6 +33,7 @@
                 id="login-pass"
                 placeholder="Contraseña"
                 required="required"
+                v-model="login.password"
               />
             </div>
             <div class="form-btn">
@@ -38,8 +43,7 @@
         </div>
         <div class="l-form" :class="{ hidden: isActive, changeopacity: isOp }">
           <form
-            @submit.prevent="register()"
-            action=""
+            @submit.prevent="registerUser()"
             id="register-form"
             method="post"
           >
@@ -50,15 +54,17 @@
                 id="register-user"
                 placeholder="Usuario"
                 required="required"
+                v-model="register.username"
               />
             </div>
             <div class="form-control">
               <input
                 type="email"
                 name="User"
-                id="register-user"
+                id="mail-user"
                 placeholder="Correo"
                 required="required"
+                v-model="register.mail"
               />
             </div>
             <div class="form-control">
@@ -68,6 +74,7 @@
                 id="register-pass"
                 placeholder="Contraseña"
                 required="required"
+                v-model="register.password"
               />
             </div>
             <div class="form-control">
@@ -77,6 +84,7 @@
                 id="re-pass"
                 placeholder="Repita Contraseña"
                 required="required"
+                v-model="register.repassword"
               />
             </div>
             <div class="form-btn">
@@ -89,17 +97,25 @@
   </div>
 </template>
 <script>
+import PostService from "../PostService";
 export default {
   data() {
     return {
+      user: [],
       isActive: true,
       isOp: true,
-      loginUser: "",
-      loginPass: "",
-      RegUser: "",
-      RegMail: "",
-      RegPass: "",
-      RegRePass: ""
+      login: {
+        mail: "",
+        password: ""
+      },
+      register: {
+        username: "",
+        mail: "",
+        password: "",
+        repassword: ""
+      },
+      error: "",
+      msg: ""
     };
   },
   methods: {
@@ -111,11 +127,45 @@ export default {
       this.isActive = false;
       setTimeout(() => (this.isOp = false), 1);
     },
-    validate: function() {
-      console.log({ name: this.usuario, contraseña: this.contraseña });
-      this.$router.push("dashboard");
+    async loginUser() {
+      try {
+        let res = await PostService.login(this.login);
+        // console.log(res);
+        if (res.success === true) {
+          // console.log(this.$store.state.userData);
+          // this.$store.state.userData = res.user;
+          this.$store.commit("setUser", res.user);
+          // console.log(this.$store.state.userData)
+          this.$router.push("/dashboard");
+        } else {
+          this.msg = res.message;
+        }
+      } catch (err) {
+        this.error = err.message;
+      }
     },
-    register: function() {}
+    async registerUser() {
+      try {
+        // console.log(this.register);
+        let res = await PostService.NewUser(this.register);
+        if (res.success === true) {
+          this.msg = res.message;
+        }
+        console.log(res);
+        // await PostService.NewUser(this.register);
+      } catch (err) {
+        this.error = err.message;
+      }
+    }
+  },
+  created() {
+    try {
+      if (this.$store.state.userData) {
+        this.$router.push({ path: `/dashboard` });
+      }
+    } catch (err) {
+      this.error = err.message;
+    }
   }
 };
 </script>

@@ -4,8 +4,20 @@
   height: 100%;
   background: $coreGradient;
   display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  .message{
+    background-color: rgb(243, 179, 168);
+    margin-bottom: 1rem;
+    width: 400px;
+    p{
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid black;
+      text-align: center;
+    }
+  }
 }
 .login-cont {
   width: 400px;

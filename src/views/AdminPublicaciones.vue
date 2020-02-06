@@ -1,5 +1,8 @@
 <template>
   <div class="adm-publication">
+    <div class="message" v-if="message">
+      <h3>{{ message }}</h3>
+    </div>
     <div class="table-title">
       <h3>Lista de publicaciones</h3>
       <router-link to="/dashboard/Editor">
@@ -53,15 +56,29 @@ export default {
       error: "",
       text: "",
       dateFormat: "",
-      editId: []
+      editId: [],
+      message: ""
     };
   },
   async created() {
     try {
-      this.posts = await PostService.getPosts("/postList");
+      if (this.$store.state.userData) {
+        // console.log(this.$store.state.userData);
+        this.posts = await PostService.getPosts("/postList");
+        this.message = "Bienvenido " + this.$store.state.userData.Username;
+      } else {
+        this.$router.push({ path: `/` });
+      }
     } catch (err) {
       this.error = err.message;
     }
+    // try {
+
+    //   this.posts = await PostService.getPosts("/postList");
+    //   this.message = "Bienvenido " + this.$store.state.userData.Username;
+    // } catch (err){
+    //   this.error = err.message;
+    // }
   },
   methods: {
     async edit(id) {

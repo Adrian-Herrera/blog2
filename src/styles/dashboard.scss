@@ -72,6 +72,11 @@
     .erase:hover {
       background-color: #b42d3b;
     }
+    .message{
+      background-color: burlywood;
+      margin-bottom: .5rem;
+      padding: .5rem;
+    }
   }
   .table-title {
     display: flex;
@@ -146,6 +151,12 @@
     border: 2px solid black;
     width: 100%;
     display: none;
+  }
+  .logout{
+    background-color: rgb(243, 62, 62);
+    border: none;
+    color: white;
+    border-radius: 5px;
   }
 }
 .input-group {
