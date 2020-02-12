@@ -161,6 +161,64 @@ class PostService {
   static deletePost(id) {
     return axios.delete(`${url}${id}`);
   }
+
+  // Video
+  static getVideos() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const res = await axios.get(url + "/videos");
+        // console.log(res);
+        const data = res.data;
+        resolve(
+          data.map(videos => ({
+            ...videos
+          }))
+        );
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  static getPublicVideos() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const res = await axios.get(url + "/publicvideos");
+        // console.log(res);
+        const data = res.data;
+        resolve(
+          data.map(videos => ({
+            ...videos
+          }))
+        );
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  static NewVideo(data) {
+    return axios
+      .post(url + "/videos", {
+        Name: data.name,
+        VideoURL: data.URL
+      })
+      .then(
+        response => {
+          return response.data;
+          // console.log(response.status);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
+  static editVideo(data) {
+    return axios.post(url + "/editVideo", {
+      data
+    });
+  }
 }
 
 export default PostService;

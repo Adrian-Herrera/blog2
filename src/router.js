@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import store from "./store";
 
 Vue.use(Router);
 
@@ -37,8 +38,25 @@ export default new Router({
       path: "/dashboard",
       name: "dashboard",
       redirect: "/dashboard/Publicaciones",
+      async beforeEnter(to, from, next) {
+        try {
+          var Permission = await store.getters.status;
+          if (Permission) {
+            next();
+          } else {
+            next({
+              name: "home" // back to safety route //
+            });
+          }
+          // next();
+        } catch (e) {
+          console.log(e);
+          next();
+        }
+      },
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/Dashboard.vue"),
+
       children: [
         {
           path: "Publicaciones",
@@ -82,6 +100,22 @@ export default new Router({
     {
       path: "/admin",
       name: "admin",
+      async beforeEnter(to, from, next) {
+        try {
+          var Permission = await store.getters.status;
+          if (Permission) {
+            next({
+              name: "dashboard" // back to safety route //
+            });
+          } else {
+            next();
+          }
+          // next();
+        } catch (e) {
+          console.log(e);
+          next();
+        }
+      },
       component: () =>
         import(/* webpackChunkName: "admin" */ "./views/Admin.vue")
     },

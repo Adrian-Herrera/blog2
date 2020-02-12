@@ -1,63 +1,41 @@
 <template>
   <div>
     <ContentTitleBar :title="title" />
-    <b-row class="feed sub" align-h="center">
-      <!-- <b-col>{{lists}}</b-col> -->
-      <b-col
-        class="feedcard"
-        cols="12"
-        sm="12"
-        md="6"
-        lg="4"
-        v-for="item in lists"
-        :key="item.name"
-      >
-        <b-card
-          overlay
-          :footer="item.name"
-          footer-bg-variant="info"
-          footer-text-variant="white"
-          :img-src="require('@/assets/VideoIcon.png')"
-          img-alt="Video icon"
-          img-height="300px"
-          img-top
-          tag="article"
-          class="mb-2"
-          @click="$bvModal.show(item.id)"
-        ></b-card>
-
-        <VideoModal
-          :id="item.id"
-          :title="item.name"
-          :link="item.link"
-        ></VideoModal>
-      </b-col>
-    </b-row>
-    <div>
-      <!-- <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')">Open Modal</b-button> -->
+    <div class="videos" v-if="videos">
+      <div class="item" v-for="video in videos" :key="video.Id_vid">
+        <iframe
+          :src="video.VideoURL"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <div class="video-name">
+          <p>{{ video.Name }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import json from "@/json/videos.json";
-import VideoModal from "@/components/modal.vue";
 import ContentTitleBar from "@/components/ContentTitleBar.vue";
+import PostService from "../PostService";
 export default {
   data() {
     return {
-      lists: [],
+      videos: [],
       name: String,
       title: "Videos"
     };
   },
-  created: function() {
-    this.getPost();
-  },
-  methods: {
-    getPost: function() {
-      this.lists = json.videos;
+  async created() {
+    try {
+      this.videos = await PostService.getPublicVideos();
+      // console.log(this.videos);
+    } catch (err) {
+      this.error = err.message;
     }
   },
-  components: { VideoModal, ContentTitleBar }
+  methods: {},
+  components: { ContentTitleBar }
 };
 </script>

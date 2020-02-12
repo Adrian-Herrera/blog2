@@ -21,6 +21,13 @@
               <b-nav-item to="/admin">Login</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
+          <div
+            class="UserInfo"
+            @click="showstore()"
+            v-if="this.$store.getters.status"
+          >
+            <p>Bienvenido {{ this.$store.state.userData.Username }}</p>
+          </div>
         </b-navbar>
       </b-row>
     </b-container>
@@ -28,7 +35,20 @@
 </template>
 <script>
 export default {
-  name: "TitleBar"
+  name: "TitleBar",
+  methods: {
+    showstore() {
+      console.log(this.$store.getters.status);
+    }
+  }
 };
 </script>
-<style></style>
+<style lang="scss">
+.UserInfo {
+  background-color: white;
+  padding: 0.3rem;
+  p {
+    margin: auto;
+  }
+}
+</style>

@@ -16,5 +16,14 @@ export default new Vuex.Store({
       console.log(state.userData);
     }
   },
+  getters: {
+    status(state) {
+      if (state.userData == "") {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  },
   actions: {}
 });

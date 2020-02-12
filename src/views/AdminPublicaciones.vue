@@ -14,7 +14,6 @@
       <table>
         <thead>
           <tr>
-            <th>Numero</th>
             <th>Nombre</th>
             <th>Fecha</th>
             <th>Estado</th>
@@ -27,7 +26,6 @@
           :index="index"
           :key="index"
         >
-          <td>{{ post.id }}</td>
           <td>{{ post.title }}</td>
           <td>{{ post.date }}</td>
           <td>
@@ -62,23 +60,10 @@ export default {
   },
   async created() {
     try {
-      if (this.$store.state.userData) {
-        // console.log(this.$store.state.userData);
-        this.posts = await PostService.getPosts("/postList");
-        this.message = "Bienvenido " + this.$store.state.userData.Username;
-      } else {
-        this.$router.push({ path: `/` });
-      }
+      this.posts = await PostService.getPosts("/postList");
     } catch (err) {
       this.error = err.message;
     }
-    // try {
-
-    //   this.posts = await PostService.getPosts("/postList");
-    //   this.message = "Bienvenido " + this.$store.state.userData.Username;
-    // } catch (err){
-    //   this.error = err.message;
-    // }
   },
   methods: {
     async edit(id) {

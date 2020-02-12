@@ -32,15 +32,6 @@ export default {
       this.$store.commit("setUser", "");
       this.$router.push({ path: `/admin` });
     }
-  },
-  created() {
-    try {
-      if (!this.$store.state.userData) {
-        this.$router.push({ path: `/` });
-      }
-    } catch (err) {
-      this.error = err.message;
-    }
   }
 };
 </script>

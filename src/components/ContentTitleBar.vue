@@ -32,7 +32,7 @@ $iconSize: 4rem;
 .ContentTitleBar {
   background-image: $coreGradient;
   color: $coreTertiaryColor;
-  height: 15vh;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,8 +41,7 @@ $iconSize: 4rem;
   padding: 0 5%;
   .label {
     position: relative;
-    margin-right: 1rem;
-    margin-left: 7px;
+    margin: auto 1rem;
     font-weight: bold;
     font-size: 2rem;
     @include media-breakpoint-down(sm) {

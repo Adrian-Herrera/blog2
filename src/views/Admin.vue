@@ -105,8 +105,8 @@ export default {
       isActive: true,
       isOp: true,
       login: {
-        mail: "",
-        password: ""
+        mail: "raiman00@hotmail.com",
+        password: "layita00"
       },
       register: {
         username: "",
@@ -164,13 +164,13 @@ export default {
     }
   },
   created() {
-    try {
-      if (this.$store.state.userData) {
-        this.$router.push({ path: `/dashboard` });
-      }
-    } catch (err) {
-      this.error = err.message;
-    }
+    // try {
+    //   if (this.$store.state.userData) {
+    //     this.$router.push({ path: `/dashboard` });
+    //   }
+    // } catch (err) {
+    //   this.error = err.message;
+    // }
   }
 };
 </script>
