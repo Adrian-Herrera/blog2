@@ -97,20 +97,21 @@ export default {
       this.$emit("close");
     },
     checkOp() {
-      if (this.P_name != "") {
-        this.title = "Editar video";
-        this.action = "Editar";
-        this.edit = true;
-      } else {
+      console.log(Object.entries(this.info).length === 0);
+      if (Object.entries(this.info).length === 0) {
         this.title = "Nuevo Video";
         this.action = "Aceptar";
         this.edit = false;
+      } else {
+        this.title = "Editar video";
+        this.action = "Editar";
+        this.edit = true;
       }
     },
     async video() {
       try {
-        var dir = this.toEmbed(this.info.URL);
-        this.info.URL = "https://www.youtube.com/embed/" + dir;
+        var dir = this.toEmbed(this.info.VideoURL);
+        this.info.VideoURL = "https://www.youtube.com/embed/" + dir;
 
         let res = await PostService.NewVideo(this.info);
         this.close();

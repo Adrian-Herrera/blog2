@@ -198,10 +198,12 @@ class PostService {
   }
 
   static NewVideo(data) {
+    console.log(data);
     return axios
       .post(url + "/videos", {
-        Name: data.name,
-        VideoURL: data.URL
+        Name: data.Name,
+        VideoURL: data.VideoURL,
+        Public: data.Public
       })
       .then(
         response => {
