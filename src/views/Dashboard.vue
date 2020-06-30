@@ -10,6 +10,14 @@
       <router-link tag="li" to="/dashboard/Perfil" class="item">
         Perfil
       </router-link>
+      <router-link
+        tag="li"
+        to="/dashboard/Usuarios"
+        class="item"
+        v-if="this.$store.state.userData.Id_usr == 1"
+      >
+        Usuarios
+      </router-link>
       <button class="logout" @click="logout()">Cerrar Sesion</button>
     </div>
     <div class="content">

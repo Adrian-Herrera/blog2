@@ -1,5 +1,5 @@
 <template>
-  <div class="adm-publication">
+  <div class="admin-content">
     <div class="message" v-if="message">
       <h3>{{ message }}</h3>
     </div>

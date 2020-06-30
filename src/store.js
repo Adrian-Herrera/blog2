@@ -9,11 +9,17 @@ export default new Vuex.Store({
   },
   mutations: {
     setUser(state, data) {
-      console.log("vuex");
-      // console.log(data);
-      console.log(state.userData);
+      // console.log("vuex");
       state.userData = data;
       console.log(state.userData);
+      console.log("-----------------------");
+    },
+    updateProfile(state, data) {
+      state.userData.Username = data.Username;
+      state.userData.Fullname = data.Fullname;
+      state.userData.Mail = data.Mail;
+      state.userData.Phone = data.Phone;
+      state.userData.Description = data.Description;
     }
   },
   getters: {
@@ -22,6 +28,14 @@ export default new Vuex.Store({
         return false;
       } else {
         return true;
+      }
+    },
+    firstLog(state) {
+      // console.log(state.userData.FirstLog);
+      if (state.userData.FirstLog == 0) {
+        return true;
+      } else {
+        return false;
       }
     }
   },

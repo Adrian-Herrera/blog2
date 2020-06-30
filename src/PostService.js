@@ -221,6 +221,39 @@ class PostService {
       data
     });
   }
+
+  // Users
+
+  static getUsers() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const res = await axios.get(url + "/users");
+        const data = res.data;
+        resolve(
+          data.map(user => ({
+            ...user
+          }))
+        );
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  static UserActive(Id_usr, Active) {
+    return axios.post(url + "/userActive ", {
+      Id_usr,
+      Active
+    });
+  }
+
+  // Profile
+
+  static editProfile(data, id) {
+    return axios.put(url + "/profile/" + id, {
+      data
+    });
+  }
 }
 
 export default PostService;

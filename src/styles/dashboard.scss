@@ -40,11 +40,16 @@
     max-height: 100%;
     padding: 1rem;
   }
-  .adm-publication {
+  .admin-content {
     display: flex;
     flex-flow: column nowrap;
     // border: 1px solid blue;
     padding: 3rem;
+    .message {
+      background-color: burlywood;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+    }
     .button {
       border: none;
       color: white;
@@ -72,11 +77,6 @@
     .erase:hover {
       background-color: #b42d3b;
     }
-    .message{
-      background-color: burlywood;
-      margin-bottom: .5rem;
-      padding: .5rem;
-    }
   }
   .table-title {
     display: flex;
@@ -89,7 +89,7 @@
   }
   .table-body {
     // margin: 0 3rem;
-    // width: 100%;
+    width: 100%;
     // border: 1px solid red;
     .table-buttons {
       width: 10%;
@@ -117,14 +117,27 @@
       border-bottom: 1px solid rgb(187, 187, 187);
     }
 
-    .Borrador {
+    .Borrador,
+    .Inactivo {
       background-color: rgb(245, 137, 137);
       padding: 0.3rem;
       border-radius: 10px;
     }
 
-    .Publico {
+    .Publico,
+    .Activo {
       background-color: rgb(113, 187, 113);
+      padding: 0.3rem;
+      border-radius: 10px;
+    }
+
+    .Administrador {
+      background-color: rgb(113, 187, 113);
+      padding: 0.3rem;
+      border-radius: 10px;
+    }
+    .Editor {
+      background-color: rgb(55, 200, 236);
       padding: 0.3rem;
       border-radius: 10px;
     }
@@ -152,7 +165,7 @@
     width: 100%;
     display: none;
   }
-  .logout{
+  .logout {
     background-color: rgb(243, 62, 62);
     border: none;
     color: white;

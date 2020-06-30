@@ -1,5 +1,5 @@
 <template>
-  <div class="adm-publication">
+  <div class="admin-content">
     <!-- <button type="button" class="btn" @click="showModal">
       Open Modal!
     </button> -->

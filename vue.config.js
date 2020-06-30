@@ -4,7 +4,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/links": {
-        target: "http://localhost:4000",
+        target: "https://server-unifranz.herokuapp.com",
         ws: true,
         changeOrigin: true
       }

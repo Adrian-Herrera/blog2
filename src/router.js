@@ -38,22 +38,6 @@ export default new Router({
       path: "/dashboard",
       name: "dashboard",
       redirect: "/dashboard/Publicaciones",
-      async beforeEnter(to, from, next) {
-        try {
-          var Permission = await store.getters.status;
-          if (Permission) {
-            next();
-          } else {
-            next({
-              name: "home" // back to safety route //
-            });
-          }
-          // next();
-        } catch (e) {
-          console.log(e);
-          next();
-        }
-      },
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/Dashboard.vue"),
 
@@ -61,6 +45,36 @@ export default new Router({
         {
           path: "Publicaciones",
           name: "adminPublicaciones",
+          async beforeEnter(to, from, next) {
+            try {
+              var Permission = await store.getters.status;
+              var first = await store.getters.firstLog;
+              var dir = "";
+              if (Permission) {
+                console.log("Permiso " + Permission);
+                if (first) {
+                  try {
+                    await next({
+                      name: "adminPerfil"
+                    });
+                  } catch (err) {
+                    console.log(err);
+                  }
+                } else {
+                  next();
+                }
+              } else {
+                console.log("Permiso " + Permission);
+                next({
+                  name: "home" // back to safety route //
+                });
+              }
+              // next();
+            } catch (e) {
+              console.log(e);
+              next();
+            }
+          },
           component: () =>
             import(
               /* webpackChunkName: "dashboard" */ "./views/AdminPublicaciones.vue"
@@ -80,6 +94,14 @@ export default new Router({
           component: () =>
             import(
               /* webpackChunkName: "dashboard" */ "./views/AdminPerfil.vue"
+            )
+        },
+        {
+          path: "Usuarios",
+          name: "adminUsuarios",
+          component: () =>
+            import(
+              /* webpackChunkName: "dashboard" */ "./views/AdminUsuarios.vue"
             )
         },
         {
