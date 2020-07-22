@@ -162,8 +162,11 @@
   // Block with html content, for develop purpose
   .export {
     border: 2px solid black;
-    width: 100%;
+    max-width: 80%;
     display: none;
+    pre {
+      max-width: 100%;
+    }
   }
   .logout {
     background-color: rgb(243, 62, 62);
@@ -208,6 +211,14 @@
   transition: all 0.2s linear;
   background-color: #337ab7;
 }
+
+.uploadFile{
+  border: 2px solid rgb(51, 177, 199);
+  border-radius: 5px;
+  padding: 1rem;
+  display: inline-block;
+}
+
 @media (max-width: 900px) {
   .dashboard {
     .adm-publication {

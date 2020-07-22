@@ -28,135 +28,152 @@
         v-model="DataInfo.Description"
       ></textarea>
     </div>
-    <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
-      <div class="menubar">
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.bold() }"
-          @click="commands.bold"
-        >
-          <icon name="004-bold" />
-        </button>
+    <div class="menu-container">
+      <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
+        <div class="menubar">
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.bold() }"
+            @click="commands.bold"
+          >
+            <icon name="004-bold" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.italic() }"
-          @click="commands.italic"
-        >
-          <icon name="031-italic" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.italic() }"
+            @click="commands.italic"
+          >
+            <icon name="031-italic" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.strike() }"
-          @click="commands.strike"
-        >
-          <icon name="053-strikethrough" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.strike() }"
+            @click="commands.strike"
+          >
+            <icon name="053-strikethrough" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.underline() }"
-          @click="commands.underline"
-        >
-          <icon name="057-underline" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.underline() }"
+            @click="commands.underline"
+          >
+            <icon name="057-underline" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.code() }"
-          @click="commands.code"
-        >
-          <icon name="009-code" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.code() }"
+            @click="commands.code"
+          >
+            <icon name="009-code" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.paragraph() }"
-          @click="commands.paragraph"
-        >
-          <icon name="043-paragraph" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.paragraph() }"
+            @click="commands.paragraph"
+          >
+            <icon name="043-paragraph" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-          @click="commands.heading({ level: 1 })"
-        >
-          H1
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+            @click="commands.heading({ level: 1 })"
+          >
+            H1
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-          @click="commands.heading({ level: 2 })"
-        >
-          H2
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+            @click="commands.heading({ level: 2 })"
+          >
+            H2
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-          @click="commands.heading({ level: 3 })"
-        >
-          H3
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+            @click="commands.heading({ level: 3 })"
+          >
+            H3
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.bullet_list() }"
-          @click="commands.bullet_list"
-        >
-          <icon name="006-bullet list" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.bullet_list() }"
+            @click="commands.bullet_list"
+          >
+            <icon name="006-bullet list" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.ordered_list() }"
-          @click="commands.ordered_list"
-        >
-          <icon name="038-number" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.ordered_list() }"
+            @click="commands.ordered_list"
+          >
+            <icon name="038-number" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.blockquote() }"
-          @click="commands.blockquote"
-        >
-          <icon name="005-quote" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.blockquote() }"
+            @click="commands.blockquote"
+          >
+            <icon name="005-quote" />
+          </button>
 
-        <button
-          class="menubar__button"
-          :class="{ 'is-active': isActive.code_block() }"
-          @click="commands.code_block"
-        >
-          <icon name="009-code" />
-        </button>
+          <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.code_block() }"
+            @click="commands.code_block"
+          >
+            <icon name="009-code" />
+          </button>
 
-        <button class="menubar__button" @click="commands.horizontal_rule">
-          <icon name="hr" />
-        </button>
+          <button class="menubar__button" @click="commands.horizontal_rule">
+            <icon name="hr" />
+          </button>
 
-        <button
-          class="menubar__button"
-          @click="showImagePrompt(commands.image)"
-        >
-          <icon name="image" />
-        </button>
+          <button
+            class="menubar__button"
+            @click="showImagePrompt(commands.image)"
+          >
+            <icon name="image" />
+          </button>
 
-        <button class="menubar__button" @click="commands.undo">
-          <icon name="058-undo" />
-        </button>
+          <button class="menubar__button" @click="commands.undo">
+            <icon name="058-undo" />
+          </button>
 
-        <button class="menubar__button" @click="commands.redo">
-          <icon name="044-redo" />
-        </button>
-      </div>
-    </editor-menu-bar>
+          <button class="menubar__button" @click="commands.redo">
+            <icon name="044-redo" />
+          </button>
+        </div>
+      </editor-menu-bar>
+    </div>
 
     <editor-content class="editor__content" :editor="editor" />
     <div><button class="editor-button" @click="save()">Guardar</button></div>
+    <div class="uploadFile">
+      <div class="uploadFile__title">
+        <p>Adjuntar PDF</p>
+        <input type="file" @change="previewImage" accept=".pdf" />
+      </div>
+      <div class="uploadFile__progressbar">
+        <p>
+          Progeso: {{ uploadValue.toFixed() + "%" }}
+          <progress id="progress" :value="uploadValue" max="100"></progress>
+        </p>
+      </div>
+      <div v-if="imageData != null">
+        <button class="uploadButton" @click="onUpload">Subir</button>
+      </div>
+    </div>
     <div class="export">
       <h3>HTML</h3>
       <pre><code>{{ html }}</code></pre>
@@ -165,6 +182,7 @@
 </template>
 
 <script>
+import firebase from "firebase";
 import Icon from "@/components/Icon.vue";
 import { Editor, EditorContent, EditorMenuBar } from "tiptap";
 import {
@@ -200,6 +218,9 @@ export default {
   },
   data() {
     return {
+      imageData: null,
+      picture: null,
+      uploadValue: 0,
       DataInfo: [],
       CategoryList: [],
       text: "",
@@ -238,6 +259,45 @@ export default {
     };
   },
   methods: {
+    previewImage(event) {
+      this.uploadValue = 0;
+      this.picture = null;
+      this.imageData = event.target.files[0];
+    },
+    onUpload() {
+      this.picture = null;
+      const storageRef = firebase
+        .storage()
+        .ref(`${this.imageData.name}`)
+        .put(this.imageData);
+      storageRef.on(
+        `state_changed`,
+        snapshot => {
+          this.uploadValue =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        },
+        error => {
+          console.log(error.message);
+        },
+        () => {
+          this.uploadValue = 100;
+          storageRef.snapshot.ref.getDownloadURL().then(url => {
+            this.picture = url;
+            console.log(url);
+            let tempHtml = this.html;
+            tempHtml =
+              tempHtml +
+              '\n<a href="' +
+              url +
+              '">' +
+              this.imageData.name +
+              "</a>";
+            this.editor.setContent(tempHtml);
+            this.html = tempHtml;
+          });
+        }
+      );
+    },
     async save() {
       if (!this.DataInfo.Id_art) {
         this.newPost();

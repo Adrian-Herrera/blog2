@@ -105,8 +105,8 @@ export default {
       isActive: true,
       isOp: true,
       login: {
-        mail: "raiman00@hotmail.com",
-        password: "layita00"
+        mail: "",
+        password: ""
       },
       register: {
         username: "",

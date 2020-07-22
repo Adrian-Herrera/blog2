@@ -1,7 +1,7 @@
 import axios from "axios";
 import moment from "moment";
 
-const url = "links";
+const url = "https://server-unifranz.herokuapp.com/links";
 moment.locale("es");
 class PostService {
   // Get Posts
